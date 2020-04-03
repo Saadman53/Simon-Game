@@ -5,4 +5,4 @@ function gameOver(){$("#level-title").text("GAMEOVER!!");$("#score-title").text(
 function checkAnswer(currentLevel){if(userClickedPattern[currentLevel]===gamePattern[currentLevel]){console.log("success");score+=5;$("#score-title").text("Score: "+score.toString());setTimeout(function(){newSequence()},1000)}
 else{console.log("wrong");var wrongsound=new Audio("sounds/wrong.mp3");$("body").addClass("game-over");setTimeout(function(){$("body").removeClass("game-over")},200);gameOver()}}
 $(".btn").click(function(e){if(started){var userChosenColor=e.target.id;userClickedPattern.push(userChosenColor);playSound(userChosenColor);animatePress(userChosenColor);checkAnswer(userClickedPattern.length-1);console.log(userClickedPattern)}})
-$("body").keydown(function(event){if(!started){started=!0;$("#score-title").removeClass("hide");newSequence()}})
+$("body").keydown(function(event){if(!started){started=!0;$("#score-title").removeClass("hide");$("#score-title").text("Score: 0");newSequence()}})
