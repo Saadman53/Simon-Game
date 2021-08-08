@@ -1,2 +1,2 @@
 # Simon-Game
-A simple Simon Game created by me
+A simple Simon Game web application.
